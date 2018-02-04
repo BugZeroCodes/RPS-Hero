@@ -10,9 +10,9 @@ RSpec.describe 'Hero' do
     expect(Hero.new('Jeff', 100, 100, 6, 30).power).to eq(6)
   end
   it 'has armor/power resistance' do
-    expect(Hero.new('Blake', 150, 100, 45, 56).armor).to eq(56)
+    expect(Hero.new('Blake', 150, 170, 45, 56).armor).to eq(56)
   end
   it 'has a name' do
-    expect(Hero.new('Blake', 190, 100, 45, 56).name).to eq('Blake')
+    expect(Hero.new('Blake', 190, 270, 45, 56).name).to eq('Blake')
   end
 end
