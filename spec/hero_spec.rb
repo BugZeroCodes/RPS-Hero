@@ -22,4 +22,12 @@ RSpec.describe 'Hero' do
   it 'has a name' do
     expect(blake.name).to eq('Blake')
   end
+  it "recieves damage" do
+    jeff.receive_damage(20)
+    expect(jeff.health).to eq(80)
+  end
+  it "receives fatal damage" do
+    jeff.receive_damage(170)
+    expect(jeff.health).to eq(0)
+  end
 end

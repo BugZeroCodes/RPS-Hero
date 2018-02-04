@@ -11,4 +11,11 @@ class Hero
       @health = @max_health
     end
   end
+
+  def receive_damage(damage)
+    @health = @health - damage
+    if @health < 0
+      @health = 0
+    end
+  end
 end
