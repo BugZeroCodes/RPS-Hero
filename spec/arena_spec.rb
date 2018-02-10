@@ -1,10 +1,10 @@
 require_relative '../lib/arena'
 RSpec.describe 'Arena' do
 
-  let(:hero1) { Hero.new('Jeff', 140, 150, 45, 56) }
-  let(:hero2) { Hero.new('Blake', 190, 200, 45, 56) }
-  let(:mak) { Hero.new('The Masked Man', 10000, 10000, 100, 900) }
-  let(:arena) { Arena.new(hero1, hero2) }
+  let(:hero1) { Hero.new(name: 'Jeff', health: 140, max_health: 150, power: 45, armor: 56) }
+  let(:hero2) { Hero.new(name: 'Blake', health: 190, max_health: 200, power: 45, armor: 56) }
+  let(:mak) { Hero.new(name: 'The Masked Man', health: 10000, max_health: 10000, power: 100, amor: 900) }
+  let(:arena) { Arena.new(hero_1: hero1, hero_2: hero2) }
 
   it 'initializes 2 heroes' do
     expect(arena).to be_an_instance_of(Arena)
