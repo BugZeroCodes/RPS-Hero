@@ -3,7 +3,7 @@ require_relative '../lib/hero.rb'
 RSpec.describe 'Hero' do
 
   let(:reginald) { Hero.new(name: 'Reginald', health: 100, max_health: 100, power: 45, armor: 30) }
-  let(:tom) { Hero.new(name: "Tom", health: 345, max_health: 345, power: 45, armor: 30) }
+  let(:tom) { Hero.new(name: "Tom", health: 345, max_health: 345, power: 45) }
   let(:jeff) { Hero.new(name: 'Jeff', health: 100, max_health: 100, power: 6, armor: 30) }
   let(:blake) { Hero.new(name: 'Blake', health: 190, max_health: 100, power: 45, armor: 56) }
 
@@ -29,5 +29,8 @@ RSpec.describe 'Hero' do
   it "receives fatal damage" do
     jeff.receive_damage(170)
     expect(jeff.health).to eq(0)
+  end
+  it "expects default value of hero's armor to be 5" do
+    expect(tom.armor).to eq(5)
   end
 end
