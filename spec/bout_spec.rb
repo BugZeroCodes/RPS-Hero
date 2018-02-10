@@ -1,5 +1,3 @@
-require_relative '../lib/bout'
-
 RSpec.describe 'Bout' do
   it "tells player1 and player2 threw" do
     expect(Bout.new(player1: :rock, player2: :paper)).to be_an_instance_of(Bout)

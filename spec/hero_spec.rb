@@ -1,5 +1,3 @@
-require_relative '../lib/hero.rb'
-
 RSpec.describe 'Hero' do
 
   let(:jeff) { Hero.new(name: 'Jeff', health: 100, max_health: 100, power: 6) }
