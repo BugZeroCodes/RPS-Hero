@@ -1,18 +1,18 @@
 class Bout
-  def initialize(player1:, player2:)
-    @player1 = player1
-    @player2 = player2
+  def initialize(character1:, character2:)
+    @character1 = character1
+    @character2 = character2
   end
 
   def result
-    if @player1 == @player2
+    if @character1 == @character2
       return :tie
-    elsif (@player1 == :rock && @player2 == :scissors) ||
-          (@player1 == :paper && @player2 == :rock) ||
-          (@player1 == :scissors && @player2 == :paper)
-      return :player1
+    elsif (@character1 == :rock && @character2 == :scissors) ||
+          (@character1 == :paper && @character2 == :rock) ||
+          (@character1 == :scissors && @character2 == :paper)
+      return :character1
     else
-      return :player2
+      return :character2
     end
   end
 end
