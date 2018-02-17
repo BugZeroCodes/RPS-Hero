@@ -15,16 +15,19 @@ puts 'Press Enter to continue.'
 gets.chomp
 system('clear')
 puts 'Choose your Hero: 1 for Jeff, 2 for Blake, and 3 for Glassed Cannon.'
-choice = gets.chomp
-while !choice == '1' && !choice == '2' && !choice == '3'
-  if choice == '1'
-    playing_hero = jeff
-  elsif choice == '2'
-      playing_hero = blake
-  elsif choice == '3'
-    playing_hero = glassed_cannon
-  else
-    puts 'Choose your Hero: 1 for Jeff, 2 for Blake, and 3 for Glassed Cannon.'
-    choice = gets.chomp
-  end
+choice = gets.chomp.to_i
+until [1,2,3].include? choice
+  puts 'Choose your Hero: 1 for Jeff, 2 for Blake, and 3 for Glassed Cannon.'
+  choice = gets.chomp.to_i
 end
+
+playing_hero = case choice
+               when 1
+                 jeff
+               when 2
+                 blake
+               when 3
+                 glassed_cannon
+               end
+
+puts "You chose #{playing_hero.name}"
