@@ -1,5 +1,8 @@
 class Arena
+  attr_reader :history
+
   def initialize(character1:, character2:)
+    @history = []
     @character1 = character1
     @character2 = character2
   end
@@ -19,6 +22,14 @@ class Arena
       return @character1.name
     else
       return nil
+    end
+  end
+
+  def start_match
+    while self.winner == nil
+      history << Bout.new(character1: @character1.get_throw,
+                          character2: @character2.get_throw)
+      self.apply_damage(history.last.result)
     end
   end
 end

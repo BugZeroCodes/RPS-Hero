@@ -1,7 +1,7 @@
 RSpec.describe 'Arena' do
 
-  let(:hero1) { Hero.new(name: 'Jeff', health: 140, max_health: 150, power: 45, armor: 56) }
-  let(:hero2) { Hero.new(name: 'Blake', health: 190, max_health: 200, power: 45, armor: 56) }
+  let(:hero1) { DumbHero.new(name: 'Jeff', health: 140, max_health: 150, power: 45, armor: 56, throws: :scissors) }
+  let(:hero2) { DumbHero.new(name: 'Blake', health: 190, max_health: 200, power: 45, armor: 56, throws: :rock) }
   let(:mak) { Hero.new(name: 'The Masked Man', health: 10000, max_health: 10000, power: 1476500, armor: 900) }
   let(:arena) { Arena.new(character1: hero1, character2: hero2) }
 
@@ -30,5 +30,12 @@ RSpec.describe 'Arena' do
       arena.apply_damage(:character1)
     end
     expect(arena.winner).to eq(hero1.name)
+  end
+  it "checks whether Blake wins" do
+    arena.start_match
+    expect(arena.winner).to eq(hero2.name)
+  end
+  it 'makes sure the starting history is blank' do
+    expect(arena.history).to eq([])
   end
 end
