@@ -30,6 +30,11 @@ class Arena
       history << Bout.new(character1: @character1.get_throw,
                           character2: @character2.get_throw)
       self.apply_damage(history.last.result)
+      puts "#{@character1.name}: #{@character1.health}/#{@character1.max_health}"
+      puts "Threw: #{history.last.character1}"
+      puts
+      puts "#{@character2.name}: #{@character2.health}/#{@character2.max_health}"
+      puts "Threw: #{history.last.character2}"
     end
   end
 end

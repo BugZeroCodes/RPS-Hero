@@ -1,4 +1,6 @@
 class Bout
+  attr_reader :character1, :character2
+  
   def initialize(character1:, character2:)
     @character1 = character1
     @character2 = character2

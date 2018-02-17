@@ -31,3 +31,7 @@ playing_hero = case choice
                end
 
 puts "You chose #{playing_hero.name}"
+monster = Monster.new(name: 'Rat', health: 23, max_health: 23, power: 10, armor: 0)
+arena = Arena.new(character1: playing_hero, character2: monster)
+puts 'Level 1: Rat'
+arena.start_match
