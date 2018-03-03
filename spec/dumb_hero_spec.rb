@@ -1,7 +1,6 @@
 RSpec.describe 'DumbHero' do
 
-  let(:rocky) { DumbHero.new(name: 'Rocky', health: 80,
-     max_health: 80, power: 15, armor: 20, throws: :rock) }
+  let(:rocky) { build(:rocky) }
   let(:flat_dillhead) { DumbHero.new(name: 'Flatty Nimhead', health: 80,
      max_health: 80, power: 15, armor: 20, throws: :paper) }
   let(:scissy) { DumbHero.new(name: 'Scissy', health: 80,
