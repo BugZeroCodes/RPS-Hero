@@ -15,31 +15,18 @@ puts 'Press Enter to continue.'
 gets.chomp
 system('clear')
 puts 'Choose your Hero: 1 for Jeff, 2 for Blake, and 3 for Glassed Cannon.'
-<<<<<<< HEAD
 choice = gets.chomp
 until ['1','2','3','J','B','GC'].include? choice
-=======
-choice = gets.chomp.to_i
-until [1,2,3,'J','B','GC'].include? choice
->>>>>>> 1ae65e7e62d1b8da61ab640b94c858c81ad15198
   puts 'Choose your Hero: 1 for Jeff, 2 for Blake, and 3 for Glassed Cannon.'
   choice = gets.chomp
 end
 
 playing_hero = case choice
-<<<<<<< HEAD
 when '1', 'J'
   jeff
 when '2', 'B'
   blake
 when '3', 'GC'
-=======
-when 1 || 'J'
-  jeff
-when 2 || 'B'
-  blake
-when 3 || 'GC'
->>>>>>> 1ae65e7e62d1b8da61ab640b94c858c81ad15198
   glassed_cannon
 end
 
