@@ -1,9 +1,9 @@
 FactoryBot.define do
   factory :arena do
 
-    character1 build(:scissy)
-    character2 build(:monster)
+    character1 { build(:scissy) }
+    character2 { build(:monster) }
 
-    initialize_with { new(character1: character1, character2: character2) }
+    initialize_with { Arena.new(character1: character1, character2: character2) }
   end
 end
