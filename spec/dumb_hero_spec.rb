@@ -1,10 +1,8 @@
 RSpec.describe 'DumbHero' do
 
   let(:rocky) { build(:rocky) }
-  let(:flat_dillhead) { DumbHero.new(name: 'Flatty Nimhead', health: 80,
-     max_health: 80, power: 15, armor: 20, throws: :paper) }
-  let(:scissy) { DumbHero.new(name: 'Scissy', health: 80,
-    max_health: 80, power: 15, armor: 20, throws: :scissors) }
+  let(:flat_dillhead) { build(:flat_dillhead) }
+  let(:scissy) { build(:scissy) }
 
   it 'is a Hero' do
     expect(rocky).to be_a(Hero)
