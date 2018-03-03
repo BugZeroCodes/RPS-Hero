@@ -1,7 +1,8 @@
 RSpec.describe 'Arena' do
   #Heroes
-  let(:jeff) { DumbHero.new(name: 'Jeff', health: 140, max_health: 150, power: 45, armor: 56, throws: :scissors) }
-  let(:blake) { DumbHero.new(name: 'Blake', health: 190, max_health: 200, power: 45, armor: 56, throws: :rock) }
+
+  let(:jeff) { build(:dumb_hero, name: 'Jeff', health: 140, max_health: 150, power: 45, armor: 56, throws: :scissors)}
+  let(:blake) { build(:dumb_hero, name: 'Blake', health: 190, max_health: 200, power: 45, armor: 56, throws: :rock)}
   # DumbHeros
   let(:rocky) { build(:rocky) }
   let(:scissy) { build(:scissy) }
