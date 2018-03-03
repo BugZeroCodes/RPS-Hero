@@ -1,11 +1,10 @@
 RSpec.describe 'Arena' do
-
+  #Heroes
   let(:jeff) { DumbHero.new(name: 'Jeff', health: 140, max_health: 150, power: 45, armor: 56, throws: :scissors) }
   let(:blake) { DumbHero.new(name: 'Blake', health: 190, max_health: 200, power: 45, armor: 56, throws: :rock) }
-  let(:mak) { Hero.new(name: 'The Masked Man', health: 100, max_health: 1000, power: 140, armor: 900) }
-  let(:arena) { Arena.new(character1: jeff, character2: blake) }
+  let(:mak) { Hero.new(name: 'The Masked Man', health: 140, max_health: 1000, power: 140, armor: 900) }
   let(:glassed_cannon) { Hero.new(name: 'Glassed Cannon', health: 90, max_health: 90, power: 33, armor: 23) }
-
+  # DumbHeros
   let(:rocky) { DumbHero.new(name: 'Rocky', health: 80,
      max_health: 80, power: 15, armor: 20, throws: :rock) }
   let(:flat_dillhead) { DumbHero.new(name: 'Flatty Nimhead Nimrod', health: 80,
@@ -14,8 +13,10 @@ RSpec.describe 'Arena' do
     max_health: 80, power: 15, armor: 20, throws: :scissors) }
   let(:test_monster) { Monster.new(name: 'Rat Leader', health: 439,
      max_health: 439, power: 56, armor: 1) }
-  let(:monster_arena) { Arena.new(character1: test_monster, character2: rocky) }
-
+  # Arenas
+  let(:arena) { build(:arena) }
+  let(:monster_arena) { build(:arena) }
+  # Tests
   it 'initializes 2 heroes' do
     expect(arena).to be_an_instance_of(Arena)
   end
