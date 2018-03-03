@@ -16,19 +16,19 @@ gets.chomp
 system('clear')
 puts 'Choose your Hero: 1 for Jeff, 2 for Blake, and 3 for Glassed Cannon.'
 choice = gets.chomp.to_i
-until [1,2,3].include? choice
+until [1,2,3,'J','B','GC'].include? choice
   puts 'Choose your Hero: 1 for Jeff, 2 for Blake, and 3 for Glassed Cannon.'
   choice = gets.chomp.to_i
 end
 
 playing_hero = case choice
-               when 1
-                 jeff
-               when 2
-                 blake
-               when 3
-                 glassed_cannon
-               end
+when 1 || 'J'
+  jeff
+when 2 || 'B'
+  blake
+when 3 || 'GC'
+  glassed_cannon
+end
 
 puts "You chose #{playing_hero.name}"
 monster = Monster.new(name: 'Rat', health: 23, max_health: 23, power: 10, armor: 0)
